@@ -1,1 +1,508 @@
-[]
+[
+    {
+        "id": "cdf74e3ed0f50b17",
+        "type": "tab",
+        "label": "Flujo 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "597047b99f1b8489",
+        "type": "tab",
+        "label": "Flujo 5",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "78f658140dceb25a",
+        "type": "tab",
+        "label": "Flujo 6",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "079daa3f1c4cac55",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "38738c5795d845f4",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "7babfac7bff6c94d",
+        "type": "ui-page",
+        "name": "PageHttps",
+        "ui": "079daa3f1c4cac55",
+        "path": "/page2",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "38738c5795d845f4",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "31d9a7c12aadfae0",
+        "type": "ui-group",
+        "name": "GrupoEjercicio3Reto",
+        "page": "7babfac7bff6c94d",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "460cc79e4e9ad5d7",
+        "type": "inject",
+        "z": "cdf74e3ed0f50b17",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "6d00785e0bf92090"
+            ]
+        ]
+    },
+    {
+        "id": "6d00785e0bf92090",
+        "type": "http request",
+        "z": "cdf74e3ed0f50b17",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://example.com",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "0943a72b11340bd6"
+            ]
+        ]
+    },
+    {
+        "id": "0943a72b11340bd6",
+        "type": "debug",
+        "z": "cdf74e3ed0f50b17",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "4578874177f66f8a",
+        "type": "debug",
+        "z": "597047b99f1b8489",
+        "name": "Server REST",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "eced890cac235002",
+        "type": "http in",
+        "z": "597047b99f1b8489",
+        "name": "",
+        "url": "/sensores/:temp/:hum",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "4578874177f66f8a",
+                "b92283d8f2e37781"
+            ]
+        ]
+    },
+    {
+        "id": "6e280d4e6ed0260f",
+        "type": "http response",
+        "z": "597047b99f1b8489",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 400,
+        "y": 160,
+        "wires": [],
+        "info": "# hola"
+    },
+    {
+        "id": "b92283d8f2e37781",
+        "type": "template",
+        "z": "597047b99f1b8489",
+        "name": "Mensaje a Pag",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Datos del Sensor</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 40px;\n            text-align: center;\n        }\n        .data-box {\n            border: 1px solid #ccc;\n            padding: 20px;\n            margin: 20px auto;\n            width: 300px;\n            border-radius: 8px;\n            background-color: #f9f9f9;\n        }\n        .value {\n            font-size: 2em;\n            color: #0056b3;\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n\n    <h1>Lecturas del Sensor</h1>\n\n    <div class=\"data-box\">\n        <h2>Temperatura</h2>\n        <!-- Usa Mustache para insertar el valor de temp -->\n        <p class=\"value\">{{req.params.temp}} &deg;C</p>\n    </div>\n\n    <div class=\"data-box\">\n        <h2>Humedad</h2>\n        <!-- Usa Mustache para insertar el valor de hum -->\n        <p class=\"value\">{{req.params.hum}} %</p>\n    </div>\n\n</body>\n</html>",
+        "output": "str",
+        "x": 400,
+        "y": 280,
+        "wires": [
+            [
+                "6e280d4e6ed0260f"
+            ]
+        ]
+    },
+    {
+        "id": "ffc1f60f7196f198",
+        "type": "debug",
+        "z": "78f658140dceb25a",
+        "name": "Server REST",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 290,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "e689552d1dc1d40b",
+        "type": "http in",
+        "z": "78f658140dceb25a",
+        "name": "",
+        "url": "/sensores/:temp/:hum",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "ffc1f60f7196f198",
+                "5f1beb864760b0a1"
+            ]
+        ]
+    },
+    {
+        "id": "fb8e6e3b0f3ff15a",
+        "type": "http response",
+        "z": "78f658140dceb25a",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 460,
+        "y": 200,
+        "wires": [],
+        "info": "# hola"
+    },
+    {
+        "id": "5f1beb864760b0a1",
+        "type": "template",
+        "z": "78f658140dceb25a",
+        "name": "Mensaje a Pag",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Datos del Sensor</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 40px;\n            text-align: center;\n        }\n        .data-box {\n            border: 1px solid #ccc;\n            padding: 20px;\n            margin: 20px auto;\n            width: 300px;\n            border-radius: 8px;\n            background-color: #f9f9f9;\n        }\n        .value {\n            font-size: 2em;\n            color: #0056b3;\n            font-weight: bold;\n        }\n    </style>\n</head>\n<body>\n\n    <h1>Lecturas del Sensor</h1>\n\n    <div class=\"data-box\">\n        <h2>Temperatura</h2>\n        <!-- Usa Mustache para insertar el valor de temp -->\n        <p class=\"value\">{{req.params.temp}} &deg;C</p>\n    </div>\n\n    <div class=\"data-box\">\n        <h2>Humedad</h2>\n        <!-- Usa Mustache para insertar el valor de hum -->\n        <p class=\"value\">{{req.params.hum}} %</p>\n    </div>\n\n</body>\n</html>",
+        "output": "str",
+        "x": 460,
+        "y": 320,
+        "wires": [
+            [
+                "fb8e6e3b0f3ff15a"
+            ]
+        ]
+    },
+    {
+        "id": "345f49197d95e06e",
+        "type": "ui-gauge",
+        "z": "78f658140dceb25a",
+        "name": "Temperatura",
+        "group": "31d9a7c12aadfae0",
+        "order": 2,
+        "value": "temp",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperatura",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "60",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 650,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f9e77a354db5116",
+        "type": "ui-gauge",
+        "z": "78f658140dceb25a",
+        "name": "Humedad",
+        "group": "31d9a7c12aadfae0",
+        "order": 1,
+        "value": "hum",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Humedad",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "units",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "60",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 640,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b132a0b451873e3",
+        "type": "inject",
+        "z": "78f658140dceb25a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "temp",
+                "v": "$floor($random() * 21) + 15",
+                "vt": "jsonata"
+            },
+            {
+                "p": "hum",
+                "v": "$floor($random() * 41) + 40",
+                "vt": "jsonata"
+            }
+        ],
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 260,
+        "y": 700,
+        "wires": [
+            [
+                "899e8674fffe3759",
+                "345f49197d95e06e",
+                "3f9e77a354db5116",
+                "99a1f63f540f1f91"
+            ]
+        ]
+    },
+    {
+        "id": "899e8674fffe3759",
+        "type": "http request",
+        "z": "78f658140dceb25a",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:1880/sensores/{{{temp}}}/{{{hum}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 650,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "99a1f63f540f1f91",
+        "type": "debug",
+        "z": "78f658140dceb25a",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 840,
+        "wires": []
+    }
+]

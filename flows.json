@@ -2,7 +2,7 @@
     {
         "id": "cdf74e3ed0f50b17",
         "type": "tab",
-        "label": "Flujo 4",
+        "label": "Laboratorio de solicitudes HTTP",
         "disabled": false,
         "info": "",
         "env": []
@@ -10,7 +10,7 @@
     {
         "id": "597047b99f1b8489",
         "type": "tab",
-        "label": "Flujo 5",
+        "label": "Laboratorio de entradas HTTP",
         "disabled": false,
         "info": "",
         "env": []
@@ -18,7 +18,7 @@
     {
         "id": "78f658140dceb25a",
         "type": "tab",
-        "label": "Flujo 6",
+        "label": "Laboratorio de sensores y Dashboard",
         "disabled": false,
         "info": "",
         "env": []

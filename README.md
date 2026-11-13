@@ -1,7 +1,7 @@
 Proyecto_NodeRED_Git
 ====================
 
-Proyecto de prácticas de Node-RED que integra ejercicios de comunicación HTTP, servicios REST y monitoreo de sensores mediante Dashboard, utilizando Git para el control de versiones.
+Proyecto de laboratorios de Node-RED que integra ejercicios de comunicación HTTP, servicios REST y monitoreo de sensores mediante Dashboard, utilizando Git para el control de versiones.
 
 ### About
 

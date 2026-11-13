@@ -1,0 +1,12 @@
+{
+    "name": "Proyecto_NodeRED_Git",
+    "description": "Proyecto de prácticas de Node-RED que integra ejercicios de comunicación HTTP, servicios REST y monitoreo de sensores mediante Dashboard, utilizando Git para el control de versiones.",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
